@@ -6,22 +6,13 @@ function adicionarAmigo() {
     const input = document.getElementById('amigo');
     const nome = input.value.trim();
 
-    // Validação
     if (!nome) {
-        alert("Por favor, digite um nome válido!");
+        alert('Por favor, insira um nome.');
         return;
     }
 
-    // Adiciona à lista
     amigos.push(nome);
-    
-    // Atualiza a lista visível
-    const lista = document.getElementById('listaAmigos');
-    const item = document.createElement('li');
-    item.textContent = nome;
-    lista.appendChild(item);
-
-    // Limpa o campo
+    atualizarListaAmigos(); // ← Chamada da nova função
     input.value = '';
 }
 
